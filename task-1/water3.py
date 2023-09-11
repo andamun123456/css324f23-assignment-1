@@ -10,7 +10,10 @@ def successors(s):
     if t>0:
         if y>0:
             if y>t:
-                yield((8,y-t,z),t)
+                x=8
+                y=y-t
+                z=z
+                t=t
             else:
                 yield((x+y,0,z),y)
         if z>0:
@@ -42,4 +45,4 @@ def successors(s):
                 yield((x,y-t,3),t)
             else:
                 yield((x,0,z+y),y)
-    return [x,y,z]
+    return [x,y,z,t]

@@ -51,7 +51,9 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    r=0,c=0,h=0
+    r=0
+    c=0
+    h=0
     for i in range(3):
         for j in range(3):
             r=math.floor((board[i+j]-1)/3)

@@ -58,5 +58,5 @@ def h3(s):
         for j in range(3):
             r=math.floor((board[i+j]-1)/3)
             c=board[i+j]%3
-            h+=(c-j)+(r-i)
+            h+=abs(c-j)+abs(r-i)
     return h

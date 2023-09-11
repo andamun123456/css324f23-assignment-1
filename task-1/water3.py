@@ -10,7 +10,7 @@ def successors(s):
     if t>0:
         if y>0:
             if y>t:
-                x=8
+                x=100
                 y=y-t
                 z=z
                 t=t

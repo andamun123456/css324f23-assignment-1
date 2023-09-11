@@ -48,4 +48,4 @@ def successors(s):
                 yield((x,y-t,3),t)
             else:
                 yield((x,0,z+y),y)
-    return [x,y,z,t]
+    return (x,y,z,t)

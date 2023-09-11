@@ -25,7 +25,7 @@ def successors(s):
     if t>0:
         if x>0:
             if x>t:
-              m=(x-t,y,z),t
+              m=((x-t,y,z),t)
               
             else:
                 yield((0,y+x,z),x)

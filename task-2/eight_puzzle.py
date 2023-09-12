@@ -55,7 +55,7 @@ def h3(s):
     c=0
     h=0
     for i in range(9):
-            if board[i]!= 0:
+            
                 index=goal.index(board[i])
                 r=i//3
                 c=i%3

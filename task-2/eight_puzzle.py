@@ -50,7 +50,7 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    goal=[1,2,3,4,5,6,7,8,0]
+    goal=(1,2,3,4,5,6,7,8,0)
     r=0
     c=0
     h=0

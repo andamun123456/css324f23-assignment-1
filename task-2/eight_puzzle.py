@@ -51,11 +51,12 @@ def h3(s):
     # implement this function
     board, _, _ = s
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
-    res = 0
-    for idx in range(0, 9):
-        if board[idx] != 0:  # Skip the blank tile
-            goal_idx = goal.index(board[idx])
-            row_diff = abs(idx // 3 - goal_idx // 3)
-            col_diff = abs(idx % 3 - goal_idx % 3)
-            res += row_diff + col_diff
-    return res
+    r=0
+    c=0
+    h=0
+    for i in range(3):
+        for j in range(3):
+            r=(board[i+j]-1)//3
+            c=(board[i+j]-1)%3
+            h+=abs(c-j)+abs(r-i)
+    return h

@@ -1,5 +1,4 @@
 import copy
-import math
 
 def initial_state():
     return ((7, 2, 4, 5, 0, 6, 8, 3, 1), 1, 1)
@@ -56,7 +55,7 @@ def h3(s):
     h=0
     for i in range(3):
         for j in range(3):
-            r=math.floor((board[i+j]-1)/3)
+            r=(board[i+j]-1)//3
             c=board[i+j]%3
             h+=abs(c-j)+abs(r-i)
     return h

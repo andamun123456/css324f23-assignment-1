@@ -56,7 +56,8 @@ def h3(s):
     h=0
     for i in range(3):
         for j in range(3):
-            r=(board[i+j]-1)//3
-            c=(board[i+j]-1)%3
-            h+=abs(c-j)+abs(r-i)
+            if board[i]!= 0:
+                r=(board[i+j]-1)//3
+                c=(board[i+j]-1)%3
+                h+=abs(c-j)+abs(r-i)
     return h

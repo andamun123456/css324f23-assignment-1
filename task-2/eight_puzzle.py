@@ -57,7 +57,7 @@ def h3(s):
     for i in range(9):
             if board[i]!= 0:
                 index=goal.index(board[i])
-                r=(board[i]-1)//3
-                c=(board[i]-1)%3
-                h+=abs(c-(index-1)%3)+abs(r-(index-1)//3)
+                r=i//3
+                c=i%3
+                h+=abs(c-(index)%3)+abs(r-(index)//3)
     return h

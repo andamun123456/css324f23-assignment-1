@@ -5,41 +5,40 @@ def is_goal(s):
     return s[0]==4 and s[1]==4
 
 def successors(s):
-    actions = []
-    a, b, c = s
-
-    # Pour from the 8-liter bottle to the 5-liter bottle
-    if a > 0 and b < 5:
-        amount = min(a, 5 - b)
-        actions.append(((a - amount, b + amount, c), amount))
-
-    # Pour from the 8-liter bottle to the 3-liter bottle
-    if a > 0 and c < 3:
-        amount = min(a, 3 - c)
-        actions.append(((a - amount, b, c + amount), amount))
-
-    # Pour from the 5-liter bottle to the 8-liter bottle
-    if b > 0 and a < 8:
-        amount = min(b, 8 - a)
-        actions.append(((a + amount, b - amount, c), amount))
-
-    # Pour from the 5-liter bottle to the 3-liter bottle
-    if b > 0 and c < 3:
-        amount = min(b, 3 - c)
-        actions.append(((a, b - amount, c + amount), amount))
-
-    # Pour from the 3-liter bottle to the 8-liter bottle
-    if c > 0 and a < 8:
-        amount = min(c, 8 - a)
-        actions.append(((a + amount, b, c - amount), amount))
-
-    # Pour from the 3-liter bottle to the 5-liter bottle
-    if c > 0 and b < 5:
-        amount = min(c, 5 - b)
-        actions.append(((a, b + amount, c - amount), amount))
-
-    return actions  
-        if z > t:
-            yield ((3, z-t ),t)
-        else:
-             yield (())
+    x, y, z = s
+    t=8-x
+    if t>0:
+        if y>0:
+            if y>t:
+                yield((8,y-t,z),t)
+            else:
+                yield((x+y,0,z),y)
+        if z>0:
+            if z>t:
+                yield((8,y,z-t),t)
+            else:
+                yield((x+z,y,0),z)
+    t=5-y
+    if t>0:
+        if x>0:
+            if x>t:
+                yield((x-t,5,z),t)
+            else:
+                yield((0,y+x,z),x)
+        if z>0:
+            if z>t:
+                yield((x,5,z-t),t)
+            else:
+                yield((x,y+z,0),z)
+    t=3-z
+    if t>0:
+        if x>0:
+            if x>t:
+                yield((x-t,y,3),t)
+            else:
+                yield((0,y,z+x),x)
+        if y>0:
+            if y>t:
+                yield((x,y-t,3),t)
+            else:
+                yield((x,0,z+y),y)

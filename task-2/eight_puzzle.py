@@ -50,12 +50,13 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    r=0
-    c=0
-    h=0
+    target_state = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+    h_value = 0
+
     for i in range(3):
         for j in range(3):
-            r=(board[i+j]-1)//3
-            c=board[i+j]%3
-            h+=abs(c-j)+abs(r-i)
-    return h
+            if node_state[i][j] != 0:
+                target_row, target_col = divmod(node_state[i][j] - 1, 3)
+                h_value += abs(i - target_row) + abs(j - target_col)
+    
+    return h_value

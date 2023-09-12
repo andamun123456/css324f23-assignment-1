@@ -50,6 +50,7 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     res = 0
     for idx in range(0, 9):
         if board[idx] != 0:  # Skip the blank tile
